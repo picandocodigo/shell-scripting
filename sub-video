@@ -5,4 +5,20 @@
 #         $3 - time offset
 #         $4 - output file
 
+# Display usage if no parameters given
+if [[ -z "$@" ]]; then
+  echo "sub-video : A substring method for videos"
+  echo "Usage:"
+  echo "    sub-video <input-file> <start time (00:00:00.0)> <time offset (00:00:00.0)> <output file>"
+  exit
+fi
+
+# Required program(s)
+req_progs=(ffmpeg)
+for p in ${req_progs[@]}; do
+hash "$p" 2>&- || \
+  { echo >&2 " Required program \"$p\" not installed."; exit 1; }
+done
+
+
 ffmpeg -i $1 -ss $2 -t $3 -acodec copy -vcodec copy -async 1 $4
