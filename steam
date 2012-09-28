@@ -1,0 +1,5 @@
+#!/bin/sh
+export WINEPREFIX=$HOME/.steam
+export WINEDEBUG=-all
+cd ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/
+nice -n 19 wine Steam.exe -no-dwrite

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#Push current branch to Heroku:
+git push $1 +HEAD:master -f

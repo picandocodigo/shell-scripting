@@ -1,0 +1,11 @@
+#/bin/sh
+# Common git workflow for a trivial commit ammend and push to Heroku
+
+git add .
+git commit --amend -C HEAD
+
+if [[ -z "$@" ]]; then
+  exit
+fi
+
+git push --force $1 master

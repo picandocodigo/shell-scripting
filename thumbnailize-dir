@@ -1,0 +1,8 @@
+#!/bin/sh
+# Create thumbnails from images in a directory (with Imagemagick)
+#
+# Usage: $1 = max size
+
+for i in *.jpg; do
+  convert -thumbnail $1 $i thumb.$i
+done

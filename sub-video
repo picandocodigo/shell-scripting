@@ -1,0 +1,8 @@
+#Cut video
+# time format: 00:00:00.0
+# Usage:  $1 - input file
+#         $2 - start time
+#         $3 - time offset
+#         $4 - output file
+
+ffmpeg -i $1 -ss $2 -t $3 -acodec copy -vcodec copy -async 1 $4
