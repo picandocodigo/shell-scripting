@@ -2,7 +2,7 @@ echo "General installs"
 apt-get install chromium-browser synergy postgresql postgresql-contrib-9.1 clementine vlc gimp pidgin emacs pidgin-otr guake
 
 echo "Ruby"
-apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion pkg-config libpq-dev libsqlite3-dev 
+apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion pkg-config libpq-dev libsqlite3-dev unity-lens-github
 
 echo "Gems"
 gem install shotgun
@@ -12,6 +12,14 @@ gem install debugger
 echo "Heroku Toolbelt"
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 heroku login
+
+echo "Calculator Lens"
+sudo add-apt-repository ppa:scopes-packagers/ppa
+sudo apt-get update && sudo apt-get install unity-lens-utilities unity-scope-calculator
+
+echo "YouTube lens"
+sudo add-apt-repository ppa:atareao/lenses
+sudo apt-get update && sudo apt-get install yavol scope-youtube
 
 # TODO:
 Git configure, rvm (rbenv)
