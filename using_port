@@ -1,0 +1,4 @@
+#!/bin/sh
+# Usage: using_port port
+echo "Process using this port:"
+netstat -tulpn | grep :$1 | awk '//{print $7}'
