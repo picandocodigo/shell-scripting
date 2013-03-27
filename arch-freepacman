@@ -1,0 +1,8 @@
+#!/bin/sh
+echo "Pacman is currently in use? We can fix that!"
+if [ -f /var/lib/pacman/db.lck ];
+then
+  sudo rm /var/lib/pacman/db.lck
+else
+  echo "db.lck not present"
+fi
