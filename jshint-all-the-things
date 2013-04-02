@@ -1,4 +1,7 @@
 #!/bin/sh
+# Requires JSHint:
+# https://github.com/jshint/jshint
+# Clone the repo and add the /bin folder to your path
 
 command -v jshint >/dev/null 2>&1 || {
     echo >&2 "I require jshint but it's not installed.  Aborting."; exit 1; 
