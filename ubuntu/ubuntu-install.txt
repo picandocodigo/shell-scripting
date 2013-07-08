@@ -2,7 +2,23 @@ echo "General installs"
 apt-get install chromium-browser synergy postgresql postgresql-contrib-9.1 clementine vlc gimp pidgin emacs pidgin-otr guake
 
 echo "Ruby"
-apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion pkg-config libpq-dev libsqlite3-dev unity-lens-github libmagickwand-dev
+apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion pkg-config libpq-dev libsqlite3-dev libmagickwand-dev
+
+echo "Installing chruby"
+wget -O chruby-0.3.5.tar.gz https://github.com/postmodern/chruby/archive/v0.3.5.tar.gz
+tar -xzvf chruby-0.3.5.tar.gz
+cd chruby-0.3.5/
+sudo make install
+
+echo "source /usr/local/share/chruby/chruby.sh" >> /etc/profile.d/chruby.sh
+
+echo "Installing ruby-install"
+wget -O ruby-install-0.1.4.tar.gz https://github.com/postmodern/ruby-install/archive/v0.1.4.tar.gz
+tar -xzvf ruby-install-0.1.4.tar.gz
+cd ruby-install-0.1.4/
+sudo make install
+
+echo "Try: ruby-install ruby to install a Ruby version"
 
 echo "Gems"
 gem install shotgun
