@@ -33,9 +33,8 @@ echo "Calculator Lens"
 sudo add-apt-repository ppa:scopes-packagers/ppa
 sudo apt-get update && sudo apt-get install unity-lens-utilities unity-scope-calculator
 
-echo "YouTube lens"
-sudo add-apt-repository ppa:atareao/lenses
-sudo apt-get update && sudo apt-get install yavol scope-youtube
+echo "LAMP"
+sudo apt-get install php5 libapache2-mod-php5 mysql-server phpmyadmin
 
 # TODO:
 Git configure, rvm (rbenv)
