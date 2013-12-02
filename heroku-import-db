@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ $# -eq 0 ]
+  then
+    echo "No arguments supplied"
+    echo "Usage: \n\theroku-import-db <app-name> <db-user> <db-name>"
+else
+    heroku pgbackups:capture -a $1 --expire
+    curl -o db.dump `heroku pgbackups:url --app $1`
+    pg_restore --verbose --clean --no-acl --no-owner -h localhost -U $2 -d $3 db.dump
+fi
+
+
+
