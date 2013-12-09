@@ -1,0 +1,30 @@
+deb http://mirrors.kernel.org/debian/ jessie main contrib non-free
+deb-src http://mirrors.kernel.org/debian/ jessie main
+
+# deb http://ftp.ccc.uba.ar/pub/linux/debian/debian/ jessie main contrib non-free
+# deb http://mirrors.advancedhosters.com/debian/ jessie main contrib non-free
+
+deb http://security.debian.org/ jessie/updates main
+deb-src http://security.debian.org/ jessie/updates main
+
+# jessie-updates, previously known as 'volatile'
+deb http://mirrors.kernel.org/debian/ jessie-updates main
+deb-src http://mirrors.kernel.org/debian/ jessie-updates main
+
+# jessie-backports, previously on backports.debian.org
+deb http://mirrors.kernel.org/debian/ jessie-backports main
+deb-src http://mirrors.kernel.org/debian/ jessie-backports main
+
+# Mozilla
+# deb http://mirrors.kernel.org/debian unstable main
+deb http://mozilla.debian.net/ experimental iceweasel-aurora
+
+# Thunderbird
+deb http://ppa.launchpad.net/ubuntu-mozilla-daily/thunderbird-aurora/ubuntu quantal main 
+deb-src http://ppa.launchpad.net/ubuntu-mozilla-daily/thunderbird-aurora/ubuntu quantal main 
+
+# Debian Multimedia
+deb http://www.deb-multimedia.org testing main non-free
+
+# PostgreSQL
+deb http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main
