@@ -2,7 +2,7 @@
 adduser `whoami` sudo
 
 #basic packages
-sudo apt-get install clementine vlc gimp pidgin emacs24 pidgin-otr guake git synergy
+sudo apt-get install -y clementine vlc gimp pidgin emacs24 pidgin-otr guake git synergy filezilla
 sudo apt-get purge evolution empathy rhythmbox
 sudo apt-get autoremove
 
@@ -47,6 +47,8 @@ sudo apt-get install software-properties-common
 # https://extensions.gnome.org/extension/584/taskbar/
 # Media Player Indicator
 # https://extensions.gnome.org/extension/55/media-player-indicator/
+# Shows legacy tray icons on top
+# https://extensions.gnome.org/extension/495/topicons/
 
 sudo add-apt-repository ppa:webupd8team/gnome3
 sudo apt-get update
