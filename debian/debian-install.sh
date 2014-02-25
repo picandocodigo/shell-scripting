@@ -49,6 +49,7 @@ sudo apt-get install software-properties-common
 # https://extensions.gnome.org/extension/55/media-player-indicator/
 # Shows legacy tray icons on top
 # https://extensions.gnome.org/extension/495/topicons/
+# gconftool-2 --set /apps/metacity/general/mouse_button_modifier --type string "<Alt>"
 
 sudo add-apt-repository ppa:webupd8team/gnome3
 sudo apt-get update
