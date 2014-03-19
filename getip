@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ip addr | awk '/inet\s/{print $2}'

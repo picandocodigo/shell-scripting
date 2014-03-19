@@ -43,13 +43,15 @@ sudo apt-get install software-properties-common
 # Extensions:
 # Workspace Grid
 # https://extensions.gnome.org/extension/484/workspace-grid/
-# TaskBar 
+# TaskBar
 # https://extensions.gnome.org/extension/584/taskbar/
 # Media Player Indicator
 # https://extensions.gnome.org/extension/55/media-player-indicator/
 # Shows legacy tray icons on top
 # https://extensions.gnome.org/extension/495/topicons/
 # gconftool-2 --set /apps/metacity/general/mouse_button_modifier --type string "<Alt>"
+# AppIndicatior - much better notification system than previous
+# https://extensions.gnome.org/extension/615/appindicator-support/
 
 sudo add-apt-repository ppa:webupd8team/gnome3
 sudo apt-get update
