@@ -1,0 +1,6 @@
+GEMNAME=`ls . | grep -io "[^\ ]*\.gemspec" | sed 's/\.gemspec//'`
+rm *.gem
+gem uninstall -x $GEMNAME
+gem build $GEMNAME.gemspec
+GEM=`ls . | grep -io [^\ ]*\.gem`
+gem install $GEM
