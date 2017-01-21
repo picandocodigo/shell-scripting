@@ -1,0 +1,3 @@
+#!/bin/sh
+
+youtube-dl -F $1 | awk '/(best)/{print $1}' | xargs youtube-dl $1 -f
