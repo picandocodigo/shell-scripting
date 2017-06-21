@@ -1,0 +1,4 @@
+#!/bin/bash
+rm -rf ~/.emacs.d
+ln -s ~/workspace/emacs-config/.emacs.d ~/.emacs.d
+emacs
