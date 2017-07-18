@@ -1,4 +1,21 @@
 #!/bin/sh
 
+# Docs
+usage(){
+    echo "Usage:\n\n\tgifs input output [scale]\n"
+    echo "Example:\n\n\t gifs video_input.ogv gif_output.gif\n"
+    echo "Example:\n\n\t gifs video_input.ogv gif_output.gif 600\n"
+}
+
+# Check parameters, if not enough show usage
+if [ $# -le 1 ]; then
+    usage
+    exit 1
+fi
+
+# Set Default value for scale
+SCALE=${3:-800}
+
+# Run the magic
 ffmpeg -y -i $1 -vf fps=10,scale=800:-1:flags=lanczos,palettegen palette.png &&
-    ffmpeg -i $1 -i palette.png -filter_complex "fps=10,scale=800:-1:flags=lanczos[x];[x][1:v]paletteuse" $2
+    ffmpeg -i $1 -i palette.png -filter_complex "fps=10,scale=$SCALE:-1:flags=lanczos[x];[x][1:v]paletteuse" $2
