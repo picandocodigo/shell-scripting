@@ -1,0 +1,17 @@
+#!/bin/sh
+
+usage(){
+    echo "Usage:\n\n\tadd-ubuntu-ppa key [server]\n"
+    echo "Example:\n\n\tadd-ubuntu-ppa 76BAFBC6\n"
+    echo "Example:\n\n\tadd-ubuntu-ppa 76BAFBC6 keyserver.ubuntu.com\n"
+}
+
+# Check parameters, if not enough show usage
+if [ $# -le 1 ]; then
+    usage
+    exit 1
+fi
+
+SERVER=${2:-keyserver.ubuntu.com}
+gpg --keyserver $SERVER --recv-keys $1
+gpg --export --armor $1 | sudo apt-key add -
