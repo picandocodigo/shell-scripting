@@ -1,0 +1,4 @@
+#!/bin/sh
+for t in /tmp/tmate-1000/*; do
+    tmate -S "$t" attach;
+done
