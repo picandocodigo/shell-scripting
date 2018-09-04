@@ -1,6 +1,24 @@
+# Script to speed up gem development.
+# Has to be run in a directory with a gemspec file
+
+# Gets the gem name from gemspec:
 GEMNAME=`ls . | grep -io "[^\ ]*\.gemspec" | sed 's/\.gemspec//'`
+
+# If we didn't get a name from the gemspec, leave:
+if [ -z "$GEMNAME" ]; then
+   echo "Couldn't get the gem name, is a .gemspec file present?"
+   exit 0
+else
+    echo "Updating $GEMNAME"
+fi
+
+echo "Removing .gem files and uninstalling"
 rm *.gem
 gem uninstall -x $GEMNAME
+
+echo "Building gem from $GEMNAME.gemspec"
 gem build $GEMNAME.gemspec
+
+echo "Installing gem:"
 GEM=`ls . | grep -io [^\ ]*\.gem`
 gem install $GEM
