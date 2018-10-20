@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ ! -d optim ]; then
+   mkdir optim
+fi
+
+for i in *.jpg; do
+    jpegoptim -d optim/ -p -t $i
+done
