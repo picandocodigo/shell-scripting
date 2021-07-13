@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+Dir['./**/.byebug_history'].each do |file|
+  File.delete(file)
+end
